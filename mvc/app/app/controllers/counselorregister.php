@@ -24,10 +24,11 @@ class Counselorregister extends Controller {
           ]);
           if($validation->passed()){
             $user=$this->CounselorsModel->findByUsername($_POST['email']);
-           
-            // dnd($user);
-            var_dump(md5($_POST['password']));
-            dnd($user->password);
+           dnd($user);
+            // dnd($_POST['email']);
+            // var_dump(md5($_POST['password']));
+            // dnd($user->password);
+            
             //$_POST['password'] == $user->password
             if(md5($_POST['password']) == $user->password){
             //   $remember=(isset($_POST['remember_me']) && Input::get('remember_me'))?true:false;

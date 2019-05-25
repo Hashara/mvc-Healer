@@ -22,6 +22,7 @@ class Counselors extends Users {
     }
 
     public function findByUsername($email) {
+      echo '<script>console.log( "hi"); </script>';
         return $this->findFirst(['conditions'=> "email = ?", 'bind'=>[$email]]);
     }
     
