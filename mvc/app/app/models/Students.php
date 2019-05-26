@@ -21,8 +21,8 @@ class Students extends Model {
         // }
     }
 
-    public function findByUsername($studentId) {
-        return $this->findFirst(['conditions'=> "studentId = ?", 'bind'=>[$studentId]]);
+    public function findByUsername($username) {
+        return $this->findFirst(['conditions'=> "studentId = ?", 'bind'=>[$username]]);
     }
     
     public static function currentLoggedInUser(){
@@ -35,7 +35,6 @@ class Students extends Model {
     }
 
     public function login($rememberMe=false) {
-    
         Session::set($this->_sessionName, $this->id);
         if($rememberMe) {
           $hash = md5(uniqid() + rand(0, 100));

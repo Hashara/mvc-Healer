@@ -1,13 +1,12 @@
 <?php
 
 class Model {
-    protected $_db, $_table, $_modelName, $_softDelete = false,$_validates=true,$_validationErrors=[],$_columnNames=[];
+    protected $_db, $_table, $_modelName, $_softDelete = false,$_validates=true,$_validationErrors=[];
     public $id;
   
     public function __construct($table) {
       $this->_db = DB::getInstance();
       $this->_table = $table;
-      $this->_setTableColumns();
       $this->_modelName = str_replace(' ', '', ucwords(str_replace('_',' ', $this->_table)));
     }
 

@@ -5,7 +5,7 @@ class Users extends Model {
     public static $currentLoggedInUser = null;
 
     public function __construct($table,$user='') {
-        $table = 'users';
+        // $table = 'users';
         parent::__construct($table);
         $this->_sessionName = CURRENT_USER_SESSION_NAME;
         $this->_cookieName = REMEMBER_ME_COOKIE_NAME;
@@ -21,7 +21,7 @@ class Users extends Model {
         //       $this->$key = $val;
         //     }
         //   }
-        // }.
+        // }
     }
 
     // public  function findByUsername($username);

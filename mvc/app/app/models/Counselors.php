@@ -22,14 +22,11 @@ class Counselors extends Users {
     }
 
     public function findByUsername($email) {
-      echo '<script>console.log( "hi"); </script>';
         return $this->findFirst(['conditions'=> "email = ?", 'bind'=>[$email]]);
     }
     
     public function login($rememberMe=false) {
-      // var_dump("hi");
         Session::set($this->_sessionName, $this->id);
-        // dnd( Session::set($this->_sessionName, $this->id));
         if($rememberMe) {
           $hash = md5(uniqid() + rand(0, 100));
           $user_agent = Session::uagent_no_version();
