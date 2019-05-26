@@ -73,13 +73,15 @@ class Validate{
 							break;
 					}
 				}
+				
 			}
 		}
+		//dnd(empty($this->_errors));
 
 		if(empty($this->_errors)){
 			$this->_passed = true;
 		}
-
+		
 		return $this;
 	}
 

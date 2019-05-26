@@ -24,7 +24,12 @@ class DB{
     
     public function query($sql, $params = [],$class = false) {
         $this->_error = false;
+
+        // dnd($sql);
         if($this->_query = $this->_pdo->prepare($sql)) {
+          // dnd($this->_query);
+          // dnd($sql);
+          
           $x = 1;
           if(count($params)) {
             foreach($params as $param) {
@@ -33,8 +38,11 @@ class DB{
             }
           }
           if($this->_query->execute()) {
+            
             if($class){
               $this->_result = $this->_query->fetchAll(PDO::FETCH_CLASS,$class);
+             
+              // dnd($this->_query);
             } else {
               $this->_result = $this->_query->fetchALL(PDO::FETCH_OBJ);
             }
@@ -42,6 +50,7 @@ class DB{
             $this->_lastInsertID = $this->_pdo->lastInsertId();
           } else {
             $this->_error = true;
+            // dnd($this->_query);
           }
         }
         return $this;
@@ -52,7 +61,7 @@ class DB{
         $bind = [];
         $order = '';
         $limit = '';
-    
+        // dnd($params);     
         // conditions
         if(isset($params['conditions'])) {
           if(is_array($params['conditions'])) {
@@ -79,12 +88,16 @@ class DB{
           $order = ' ORDER BY ' . $params['order'];
         }
     
-        // limit
+        // limit  
         if(array_key_exists('limit', $params)) {
           $limit = ' LIMIT ' . $params['limit'];
         }
         $sql = "SELECT * FROM {$table}{$conditionString}{$order}{$limit}";
+        // dnd($sql);
         if($this->query($sql, $bind,$class)) {
+          // dnd($this->query($sql, $bind,$class));
+          // dnd(!count($this->_result));
+          // dnd($this->_result);
           if(!count($this->_result)) return false;
           return true;
         }
@@ -92,32 +105,40 @@ class DB{
       }
 
     public function find($table, $params=[],$class=false) {
+     
         if($this->_read($table, $params,$class)) {
+        
           return $this->results();
         }
         return false;
     }
 
     public function findFirst($table, $params=[],$class=false) {
-        if($this->_read($table, $params,$class)) {
+      // dnd($params);
+      if($this->_read($table, $params,$class)) {
           return $this->first();
         }
         return false;
     }
 
     public function insert($table, $fields = []) {
+      // dnd("hsi");
         $fieldString = '';
         $valueString = '';
-        $values = [];
-    
+        $values   = [];
+      // dnd($fields);
         foreach($fields as $field => $value) {
+          // dnd($field);
           $fieldString .= '`' . $field . '`,';
           $valueString .= '?,';
           $values[] = $value;
+          
         }
+        // dnd( $values);
         $fieldString = rtrim($fieldString, ',');
         $valueString = rtrim($valueString, ',');
         $sql = "INSERT INTO {$table} ({$fieldString}) VALUES ({$valueString})";
+      //  dnd($sql);
         if(!$this->query($sql, $values)->error()) {
           return true;
         }
@@ -153,6 +174,7 @@ class DB{
       }
 
       public function first() {
+        // dnd($this->_result);
         return (!empty($this->_result))? $this->_result[0] : [];
       }
 

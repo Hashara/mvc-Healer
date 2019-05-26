@@ -10,7 +10,7 @@
     define('DEFAULT_CONTROLLER', 'Home');
     define('DEFAULT_LAYOUT', 'default');
     define('SITE_TITLE', 'Healers');
-    define('PROOT', 'Healers/mvc/app/');
+    define('PROOT', '/mvc/app/');
 
     define('CURRENT_USER_SESSION_NAME', 'kwXeusqldkiIKjehsLQZJFKJ'); //session name for logged in user
   define('REMEMBER_ME_COOKIE_NAME', 'JAJEI6382LSJVlkdjfh3801jvD'); // cookie name for logged in user remember me
