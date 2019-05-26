@@ -1,23 +1,26 @@
 <?php
 
 class Model {
-    protected $_db, $_table, $_modelName, $_softDelete = false,$_validates=true,$_validationErrors=[];
+    protected $_db, $_table, $_modelName, $_softDelete = false,$_columnNames=[],$_validates=true,$_validationErrors=[];
     public $id;
   
     public function __construct($table) {
       $this->_db = DB::getInstance();
       $this->_table = $table;
+      $this->_setTableColumns();
       $this->_modelName = str_replace(' ', '', ucwords(str_replace('_',' ', $this->_table)));
     }
 
     protected function _setTableColumns(){
         $columns=$this->get_columns();
+        // dnd($columns);
         foreach($columns as $column){
-          $columnName=$column->Field;
-            $this->columnNames[]=$column->Field;
+           $columnName=$column->Field;
+          //  dnd($columnName);
+            $this->_columnNames[]=$columnName;
             $this->{$columnName}=null;
-
-        }
+         
+        } 
     }
 
     
@@ -56,33 +59,39 @@ class Model {
   public function save() {
     $fields=[];
     foreach($this->_columnNames as $column){
+      // var_dump($column);
       $fields[$column]=$this->$column;
+      // var_dump($fields[$column]);
     }
+    //die();
 
     if(property_exists($this,'id')&& $this->id !=''){
+      
       return $this->update($this->id,$fields);
-    }else{
+    }
+    // else{
       return $this->insert($fields);
-    }
-    if($this->_validates){
-      $this->beforeSave();
-      $fields = H::getObjectProperties($this);
-      // determine whether to update or insert
-      if(property_exists($this, 'id') && $this->id != '') {
-        $save = $this->update($this->id, $fields);
-        $this->afterSave();
-        return $save;
-      } else {
-        $save = $this->insert($fields);
-        $this->afterSave();
-        return $save;
-      }
-    }
-    return false;
+    //}
+    // if($this->_validates){
+    //   $this->beforeSave();
+    //   $fields = H::getObjectProperties($this);
+    //   // determine whether to update or insert
+    //   if(property_exists($this, 'id') && $this->id != '') {
+    //     $save = $this->update($this->id, $fields);
+    //     $this->afterSave();
+    //     return $save;
+    //   } else {
+    //     $save = $this->insert($fields);
+    //     $this->afterSave();
+    //     return $save;
+    //   }
+    // }
+    // return false;
   }
 
 
   public function insert($fields) {
+    // s
     if(empty($fields)) return false;
     // if(array_key_exists('id', $fields)) unset($fields['id']);
     return $this->_db->insert($this->_table, $fields);
@@ -115,10 +124,14 @@ class Model {
   }
 
   public function assign($params) {
+   
     if(!empty($params)) {
+      // dnd($this->_columnNames);
       foreach($params as $key => $val) {
         if(in_array($key,$this->_columnNames)){
           $this->$key = sanitize($val);
+          // var_dump($key);
+          // var_dump($val);
         }
       }
       return true;

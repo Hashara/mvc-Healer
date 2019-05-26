@@ -49,11 +49,11 @@
                 
                 <p for="">Password :</p>
                 <input type="password" name="password" id="password" placeholder="Password" class="form-control">
-                <div class="form-group">
+                <!-- <div class="form-group">
                 <label for="remeber_me">Remember me
                 <input type="checkbox" id="remeber_me" name="remeber_me"  value="on">
                 </label>
-            </div>
+            </div> -->
                 <p><button type="submit" name="submit" class="btn btn-primary">LogIn</button></p>
                 </div>
                 </div>
