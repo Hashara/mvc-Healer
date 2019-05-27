@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="stylesheet\_variables.SCSS">
+            <link rel="stylesheet" href="stylesheet\bootstrap.CSS">
+            <link rel="stylesheet" href="stylesheet\bootstrao.min.CSS">
+            <link rel="stylesheet" href="stylesheet\style.CSS">
+            
+    </head>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Healers</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarColor01">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li> 
+              </ul>
+              
+            </div>
+          </nav>
+    <body>
+        <div class = 'centerDiv' >
+        <form method = "POST" action="/healers170706K/log1.php">
+            <label>User ID:<br></label>
+            <p><input type="text" class="form-control" name="UserID"><br></p>
+            <label>Password:<br></label>
+            <p><input type="password" class="form-control" name="password"><br></p>
+            <p><input type = "submit" class="btn btn-primary" name = "submit" value = "Log In"></p>
+        </form><br>
+    </div>
+    </body>
+</html>
