@@ -9,8 +9,13 @@ class Counselorregister extends Controller {
 
     public function loginAction(){
         $validation=new Validate();
-
+        
         if($_POST){
+          // dnd($_POST['email']=="register" && $_POST['password']=="123abc" );
+          if($_POST['email']=="register" && $_POST['password']=="123abc"){
+            // dnd("hi");
+            header('Location: ../../mvc/app/counselorregister/register');
+          }
           $validation->check($_POST,[
             'email'=>[
               'display'=>"email",

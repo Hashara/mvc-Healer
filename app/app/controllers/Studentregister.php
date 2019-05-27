@@ -9,7 +9,7 @@ class Studentregister extends Controller {
 
     public function loginAction(){
         $validation=new Validate();
-
+        
         if($_POST){
           $validation->check($_POST,[
             'studentId'=>[

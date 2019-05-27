@@ -1,4 +1,4 @@
-7<?php
+<?php
 
 function dnd($data){
     echo '<pre>';

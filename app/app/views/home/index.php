@@ -43,6 +43,7 @@
       <div>
       <a href="<?=PROOT?>Register/loginHome">
       <button type="button" class="btn btn-primary" >Log in</button>
+      </a>
       </div>
     </div>
   </div>
@@ -53,8 +54,9 @@
       <img src="<?=PROOT?>icons/signup.png" alt="signup" width=40% height="auto">
       <p><br></p>
       <div>
-      <a href="<?=PROOT?>Register/SignupHome">
+      <a href="<?=PROOT?>Studentregister/register" > 
       <button type="button" class="btn btn-primary" >Sign up</button>
+      </a>
       </div>
     </div>
   </div>
@@ -64,9 +66,10 @@
       <h3><b>Want to help someone?</b></h3>
       <img src="<?=PROOT?>icons/view.png" alt="visit" width=40% height="auto">
       <p><br></p>
-      <!-- <a href="<?=PROOT?>" visit> --> 
+      <a href="<?=PROOT?>Studentregister/register" > 
       
       <button type="button" class="btn btn-primary" >Visit</button>
+      </a>
       </div>
      
     </div>
