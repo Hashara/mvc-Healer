@@ -64,7 +64,7 @@ class Model {
       // var_dump($fields[$column]);
     }
     //die();
-
+    // dnd($fields);
     if(property_exists($this,'id')&& $this->id !=''){
       
       return $this->update($this->id,$fields);
@@ -91,7 +91,7 @@ class Model {
 
 
   public function insert($fields) {
-    // s
+    //dnd($fields);
     if(empty($fields)) return false;
     // if(array_key_exists('id', $fields)) unset($fields['id']);
     return $this->_db->insert($this->_table, $fields);
@@ -134,6 +134,7 @@ class Model {
           // var_dump($val);
         }
       }
+      // dnd($params);
       return true;
     }
     return false;

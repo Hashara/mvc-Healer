@@ -54,6 +54,69 @@ class Counselorregister extends Controller {
     }
 
     public function registerAction(){
+
+      $validation=new Validate();
+      $posted_values=['name'=>'','email'=>'','gender'=>'','password'=>'','confirm'=>'','designation'=>'','faculty'=>'','department'=>''];
+     
+     if($_POST){
+      //  dnd($_POST);
+       $posted_values=posted_values($_POST);
+        $validation->check($_POST,[
+          'name'=>[
+            'display'=>'name',
+            'required'=>true
+          ],
+        'email'=>[
+          'display'=>'email',
+            'required'=>true
+        ],
+        'gender'=>[
+          'display'=>'gender',
+            'required'=>true
+        ],
+        'password'=>[
+          'display'=>'password',
+            'required'=>true,
+            'min'=>6
+        ],
+        'confirm'=>[
+          'display'=>'confirm',
+            'required'=>true,
+            'matches'=>'password'
+        ],
+        'designation'=>[
+          'display'=>'designation',
+            'required'=>true
+        ],
+        'faculty'=>[
+          'display'=>'faculty',
+            'required'=>true
+        ],
+        'department'=>[
+          'display'=>'department',
+            'required'=>true
+        ]]);
+     
+      // $this->view->displayErrors= $validation->displayErrors();
+      // dnd($validation->passed());
+     if($validation->passed()){
+      //  dnd("hi");
+      $newUser=new Counselors();
+      $newUser->registerNewCounselor($_POST);
+      // dnd( $newUser); 
+      $newUser->login();
+
+     
+        // Router::redirect('');//
+        // header('Location: ../app/');
+        header('Location: ../../../app/counselorregister/login');
+     }
+    }
+      $this->view->post=$posted_values;
+      $this->view->displayErrors= $validation->displayErrors();
+      // die();
       $this->view->render('counselorregister/register');
     }
+
+    
 }

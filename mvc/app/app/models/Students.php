@@ -66,7 +66,7 @@ class Students extends Model {
         
         $this->assign($params);
         // dnd( $this->password);
-        $this->password=md5( $this->password,PASSWORD_DEFAULT);
+        $this->password=md5( $this->password);
         $this->save();
       }
 

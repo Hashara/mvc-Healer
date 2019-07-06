@@ -59,5 +59,16 @@ class Counselors extends Users {
         self::$currentLoggedInUser = null;
         return true;
       }
+
+      public function registerNewCounselor($params){
+        
+        
+        $this->assign($params);
+        // dnd(md5( $this->password));
+        $this->password=md5( $this->password);
+        $this->save();
+
+      }
+
       
 }

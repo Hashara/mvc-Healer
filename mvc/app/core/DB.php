@@ -25,7 +25,7 @@ class DB{
     public function query($sql, $params = [],$class = false) {
         $this->_error = false;
 
-        //  dnd($class);
+        // dnd($sql);
         if($this->_query = $this->_pdo->prepare($sql)) {
           // dnd($this->_query);
           // dnd($sql);
@@ -126,7 +126,7 @@ class DB{
         $fieldString = '';
         $valueString = '';
         $values   = [];
-      
+      // dnd($fields);
         foreach($fields as $field => $value) {
           // dnd($field);
           $fieldString .= '`' . $field . '`,';
@@ -138,7 +138,7 @@ class DB{
         $fieldString = rtrim($fieldString, ',');
         $valueString = rtrim($valueString, ',');
         $sql = "INSERT INTO {$table} ({$fieldString}) VALUES ({$valueString})";
-      //  dnd($sql);
+      //  dnd($values);
         if(!$this->query($sql, $values)->error()) {
           return true;
         }

@@ -1,5 +1,5 @@
-<?php $this->setSiteTitle('regisster');?>
- <?php $this->setLayout('loginhomelayout')?> 
+<?php $this->setSiteTitle('register');?>
+ <?php $this->setLayout('signuplayout')?> 
 <?php $this->start('body'); ?>
 
     

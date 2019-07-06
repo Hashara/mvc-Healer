@@ -57,7 +57,8 @@ class Studentregister extends Controller {
 
       $validation=new Validate();
       $posted_values=['studentId'=>'','studentName'=>'','batch'=>'','birthday'=>'','email'=>'','password'=>'','confirm'=>'','faculty'=>'','department'=>''];
-     
+     //dnd($posted_values->studentId);
+     //dnd($_POST);
      if($_POST){
       //  dnd($_POST);
        $posted_values=posted_values($_POST);
@@ -65,7 +66,8 @@ class Studentregister extends Controller {
           'studentId'=>[
               'display'=>'studentId',
               'required'=>true,
-              'max'=>6
+              // 'unique'=>'Students',
+              'max'=>7
 
         ],
         'studentName'=>[
@@ -115,7 +117,11 @@ class Studentregister extends Controller {
       $newUser->login();
 
      
-        Router::redirect('');//
+        // Router::redirect('');//
+        // header('Location: ../app/');
+        // http://localhost/
+        //dnd();
+        header('Location: ../../../ChoseCouncelor/index.php?id='.$_POST['studentId']);
      }
     }
       $this->view->post=$posted_values;
