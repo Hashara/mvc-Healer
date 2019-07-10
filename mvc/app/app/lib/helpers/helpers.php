@@ -1,4 +1,4 @@
-7<?php
+<?php
 
 function dnd($data){
     echo '<pre>';
@@ -20,4 +20,12 @@ function sanitize($dirty){
         return Students::currentLoggedInUser();
     }
    
+}
+
+function posted_values($post)
+{
+    $clean_ary=[];
+    foreach($post as $key=>$value){
+        $clean_ary[$key]=sanitize($value);
+    }return $clean_ary;
 }
