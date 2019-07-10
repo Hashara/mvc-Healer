@@ -1,0 +1,138 @@
+/*h1 {
+    color: black;
+    text-align: center;
+  }*/
+        
+  img {
+    margin-top:7vh;
+    border-style: double;
+}
+/* unvisited link */
+
+          /* unvisited link */
+          a:link {
+    color: black;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: black;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: black;
+  }
+  
+  /* selected link */
+  a:active {
+    color: black;
+  }
+  p{
+    text-align: center;
+  }
+.centerDiv{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:	rgba(53, 86, 230, 0.486);
+    padding:5%;
+    opacity: 1;
+   
+    
+}
+#RecordBody{
+  text-align:left;
+  text-decoration-color: black;
+}
+#TaskBody{
+  text-align:left;
+}
+#CommentBody{
+  text-align:left;
+}
+li{
+  color:black;
+}
+h3{
+  color:black;
+}
+#profile{
+  position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:	rgba(53, 86, 230, 0.486);
+    padding:1%;
+    opacity: 1;
+}
+#studentProfile{
+  padding: 0.5%;
+  margin:25px;
+}
+.divpadding{
+  padding: 3%;
+  margin:35px;
+  float: left;
+  background-color:	rgba(80, 108, 235, 0.486);
+  opacity: 1;
+  
+}
+.modal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4);
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  opacity: 1;
+  background-color: rgba(184, 197, 240, 0.888);
+}
+
+.hideform {
+  display: none;
+}
+.FixedPosition{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.GetText{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(32, 13, 202);
+}
+body{
+  background-image: url('../image/1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+  
+  
+  
