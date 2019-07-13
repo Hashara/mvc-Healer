@@ -1,0 +1,59 @@
+.bg-t {
+  /* The image used */
+  background-image: url("../../img/task.jpg");
+
+  /* Full height */
+  height: 100%;
+
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-image: url("../../img/task.jpg"); */
+}
+
+.bg-a {
+  /* The image used */
+  background-image: url("../../img/ach.jpg");
+
+  /* Full height */
+  height: 100%;
+
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-image: url("../../img/task.jpg"); */
+}
+
+.bg-r{
+  /* The image used */
+  background-image: url("../../img/record.jpg");
+
+  /* Full height */
+  height: 100%;
+
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-image: url("../../img/task.jpg"); */
+}
+
+.bg-c {
+  /* The image used */
+  background-image: url("../../img/com.jpg");
+
+  /* Full height */
+  height: 100%;
+
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-image: url("../../img/task.jpg"); */
+}
