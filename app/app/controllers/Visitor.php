@@ -59,6 +59,7 @@ class Visitor extends Controller{
       //         'required'=>true
       //       ]]);
       //dnd($posted_values);
+      Router::redirect('');
       }
      
      
@@ -67,7 +68,7 @@ class Visitor extends Controller{
       $visitor->updateinfo($visitor->id,$posted_values);
       $this->view->visitor=$visitor;
       
-      Router::redirect('');
+      
       $this->view->render('visitor/visitorinfo');
     }
 
