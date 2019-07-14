@@ -1,8 +1,16 @@
 <?php $this->setLayout('counsellorlayout')?>
 
-
+<ul class="slideshow">
+  <li><span>Image 01</span></li>
+  <li><span>Image 02</span></li>
+  <li><span>Image 03</span></li>
+  <li><span>Image 04</span></li>
+  <li><span>Image 05</span></li>
+  <li><span>Image 06</span></li>
+</ul>
 
 <?php $this->start('body'); ?>
+
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 <img src="<?=PROOT?>icons/logo.jpg" alt="" width="auto" height="30px " >
@@ -37,7 +45,7 @@ foreach($this->studentlist as $t){
       
           
           echo "<div class='card mb-3 divpadding' id = 'studentProfile' style=max-width: 20rem;>
-          <div class='card-header'><h3><a href ='";
+          <div class='card-header' ><h3><a href ='";
           echo PROOT;
           echo "counselorregister/viewStudent/";
           echo $this->counselor->counsellorid;

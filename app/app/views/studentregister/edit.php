@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="<?=PROOT?>index.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?=PROOT?>studentregister/showProfile/<?=$this->student->studentId?>">Home <span class="sr-only">(current)</span></a>
             </li>
             </ul>
 
@@ -33,12 +33,14 @@
 
        <legend ><b>Edit</b></legend>
 
-       <p>  <button class="btn btn-primary" style="border-radius: 10px;">
-           <a href="<?=PROOT?>studentregister/editProfile/<?=$this->student->studentId?>">Edit Profile</a></button></p>
+       <!-- <p>  <button class="btn btn-primary" style="border-radius: 10px;">
+           <a href="">Edit Profile</a></button></p>
 
     <p>  <button class="btn btn-primary" style="border-radius: 10px;">
-        <a href="<?=PROOT?>studentregister/editPassword/<?=$this->student->studentId?>">Change Password</a></button></p>
-
+        <a href="?=PROOT?>studentregister/editPassword/<?=$this->student->studentId?>">Change Password</a></button></p> -->
+        <a class="btn btn-primary" style="margin-left: 10px;" href ="<?=PROOT?>studentregister/editPassword/<?=$this->student->studentId?>">Change Password</a>
+    <p><br></p>
+    <a class="btn btn-primary" style="margin-left: 10px;" href = '<?=PROOT?>studentregister/editProfile/<?=$this->student->studentId?>'>Edit Profile</a>
 
      </div>
      </center>

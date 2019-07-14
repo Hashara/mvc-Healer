@@ -59,21 +59,28 @@ class Visitor extends Controller{
       //         'required'=>true
       //       ]]);
       //dnd($posted_values);
-      }
-     
-     
       $this->view->post=$posted_values;
       //dnd();
       $visitor->updateinfo($visitor->id,$posted_values);
       $this->view->visitor=$visitor;
+      Router::redirect('visitor/visitordone');
+      }
+     
+     
       
-      Router::redirect('');
+      
+      
       $this->view->render('visitor/visitorinfo');
     }
 
     public function visitorCounselorAction($id){
       $list=$this->VisitorsModel->findByCId($id);
+      $this->view->id=$id;
       $this->view->list=$list;
       $this->view->render('visitor/visitorCounselor');
+    }
+
+    public function visitordoneAction(){
+      $this->view->render('visitor/visitordone');
     }
 }

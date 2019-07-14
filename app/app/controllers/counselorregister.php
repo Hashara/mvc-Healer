@@ -108,7 +108,7 @@ class Counselorregister extends Controller {
       $cou=$this->CounselorsModel->findByUserId($id);
       //dnd($cou);
       $this->view->cou=$cou;
-
+      $this->view->id=$id;
       //dnd($id);
       $validation=new Validate();
       $posted_values=['current'=>'','new'=>'','confirm'=>''];

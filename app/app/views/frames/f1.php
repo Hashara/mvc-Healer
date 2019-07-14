@@ -34,7 +34,10 @@
   <div class="" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="<?=PROOT?>">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href=<?php
+        echo "../../../app/views/frames/f3.php?id=".$ID;
+        ?> target="f3">
+        Home <span class="sr-only">(current)</span></a>
       </li>
 
     </ul>

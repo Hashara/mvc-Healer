@@ -12,11 +12,24 @@
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <!-- <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
+      </li> -->
       <li class="nav-item">
-        <a class="nav-link" href="#">My Account</a>
+        <a class="nav-link" href=
+        <?php 
+        if ($this->isstudent=='true'){
+          echo PROOT;
+          echo "/studentregister/showProfile/";
+          echo $this->student->studentId;
+          //echo ">"
+        }else{
+        echo PROOT;
+
+        echo "counselorregister/showProfile/";
+        echo $this->student->Counselor;
+      }?>
+      >My Account</a>
       </li>
             
     </ul>

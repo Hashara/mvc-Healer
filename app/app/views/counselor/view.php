@@ -1,6 +1,14 @@
 <?php $this->setSiteTitle('edit');?>
- <?php $this->setLayout('counsellorlayout')?>
+ <?php $this->setLayout('loginhomelayout')?>
 <?php $this->start('body'); ?>
+<ul class="slideshow">
+  <li><span>Image 01</span></li>
+  <li><span>Image 02</span></li>
+  <li><span>Image 03</span></li>
+  <li><span>Image 04</span></li>
+  <li><span>Image 05</span></li>
+  <li><span>Image 06</span></li>
+</ul>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <img src="<?=PROOT?>icons/logo.jpg" alt="" width="auto" height="30px " >
@@ -12,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="<?=PROOT?>index.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?=PROOT?>counselorregister/showProfile/<?=$this->counselor->counsellorid?>">Home <span class="sr-only">(current)</span></a>
             </li>
             </ul>
 
@@ -28,12 +36,16 @@
       $email = $this->counselor->email;
       $faculty = $this->counselor->faculty;
       $department = $this->counselor->department;
-      
-      echo "<div class='centerDiv'>";
+      echo "<center>";
+      echo '<div class="container">';
+      echo "<div class='card'>";
+
       echo "<legend ><b>My Profile</b></legend>";
+      echo "<center>";
               echo "<img src='";
               echo $image;
               echo "' width='175' height='200'><br>";
+              echo "</center>";
               echo "<br>";
               echo "<ul><li>Name:     ";
               echo $name;
@@ -47,7 +59,8 @@
               echo "<li>Email:   ";
               echo $email;
               echo "</br>";
-              echo "</ul></div>"
+              echo "</ul></div></div></center>";
+
       ?>
     
   

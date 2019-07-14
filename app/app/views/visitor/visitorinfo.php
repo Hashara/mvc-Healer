@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?=PROOT?>">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Councelor</a>
@@ -36,23 +36,23 @@
     
     <div class="form-group">
       <label for=""><b>Name</b></label>
-      <input type="text" name="contactName" class="form-control" id="contactName" aria-describedby="emailHelp" placeholder="Enter name" value="<?=$this->post['contactName']?>" >
+      <input type="text" name="contactName" class="form-control" id="contactName" aria-describedby="emailHelp" placeholder="Enter name" >
       
     </div>
 
     <div class="form-group">
       <label for=""><b>Email address</b></label>
-      <input type="text" name="contactemail" class="form-control" id="contactemail" aria-describedby="emailHelp" placeholder="Enter contact email" value="<?=$this->post['contactemail']?>" >
+      <input type="email" name="contactemail" class="form-control" id="contactemail" aria-describedby="emailHelp" placeholder="Enter contact email"  >
       
     </div>
     <div class="form-group">
       <label for="e"><b>Contact Number</b></label>
-      <input type="text" name="contactNum" class="form-control" id="contactNum" aria-describedby="emailHelp" placeholder="Enter contact number" value="<?=$this->post['contactNum']?>" >
+      <input type="text" name="contactNum" class="form-control" id="contactNum" aria-describedby="emailHelp" placeholder="Enter contact number"  >
     </div>
    
     <div class="form-group">
       <label for=""><b>Message</b></label>
-      <input type="text" name="	message" class="form-control" id="message" aria-describedby="emailHelp" placeholder="Enter name" value="<?=$this->post['message']?>" >
+      <input type="text" name="	message" class="form-control" id="message" aria-describedby="emailHelp" placeholder="Enter name"  >
       
     </div>
    

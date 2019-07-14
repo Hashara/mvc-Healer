@@ -1,5 +1,5 @@
 <?php $this->setSiteTitle('Home');?>
-<?php $this->setLayout('messageviewerlayout')?>
+<?php $this->setLayout('signuplayout')?>
 <?php $this->start('body'); ?>
 
     
@@ -20,6 +20,7 @@
         </div>
     </nav>
     
+    <br>
     <form action="" method="post">
       <center>
     

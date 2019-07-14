@@ -11,15 +11,29 @@
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <!-- <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" href=
+        <?php 
+        if (strlen($this->tofromarray[0])==7){
+          echo PROOT;
+          echo "/studentregister/showProfile/";
+          echo $this->tofromarray[0];
+          //echo ">"
+        }else{
+        echo PROOT;
+
+        echo "counselorregister/showProfile/";
+        echo $this->tofromarray[0];
+      }?>
+        >My Account</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">My Account</a>
+         <a class="nav-link" href="<?=PROOT?>message/messagesender/<?=$this->tofromarray[0]?>/<?=$this->tofromarray[1]?>">Chat</a> <!--connect to chat display -->
       </li>
-      <li class="nav-item">
-         <a class="nav-link" href="#">Chat Room</a> <!--connect to chat room -->
-      </li>
+
       
     </ul>
     
